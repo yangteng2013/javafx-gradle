@@ -1,0 +1,39 @@
+// Works with Gradle 6.3 and Java 14
+
+// To run this do:
+// ./gradlew run
+
+// To build a distribution zip:
+// ./gradlew distZip
+
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+sourceCompatibility = 14
+targetCompatibility = 14
+
+version = '0.0.2'
+group = 'alexskxy.javafxgradlestarterr'
+mainClassName = "alexskxy.javafxgradlestarter.Main"
+
+javafx {
+    version = "14"
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.mariuszgromada.math:MathParser.org-mXparser:4.4.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+tasks.named('test'){
+    useJUnitPlatform()
+}
