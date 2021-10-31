@@ -11,7 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -56,9 +58,13 @@ public class LoginApp extends Application {
 
         Scene scene = new Scene(gridPane);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("登录页");
+        primaryStage.setTitle("登录");
         primaryStage.setHeight(300);
         primaryStage.setWidth(500);
+
+        //无最大最小化，只有关闭按钮
+        primaryStage.initStyle(StageStyle.UTILITY);
+
         primaryStage.show();
 
         clear.setOnAction(new EventHandler<ActionEvent>() {
@@ -82,10 +88,17 @@ public class LoginApp extends Application {
 
                 if (e_name.getText().equals(username) && e_password.getText().equals(password)) {
                     primaryStage.close();
-                    Stage stage2 = new Stage();
-                    stage2.setHeight(300);
-                    stage2.setWidth(500);
-                    stage2.show();
+//                    Stage stage2 = new Stage();
+//                    stage2.setHeight(300);
+//                    stage2.setWidth(500);
+//                    stage2.show();
+
+                    try {
+                        MainApp mainApp = new MainApp();
+                        mainApp.showWindow();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                 }else {
                     System.out.println("密码输入错误");

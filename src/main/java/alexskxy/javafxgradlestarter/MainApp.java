@@ -8,7 +8,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class App extends Application {
+public class MainApp extends Application {
+
+    Stage stage = new Stage();
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -20,6 +23,13 @@ public class App extends Application {
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
+        stage.setTitle("个人信息概览");
         stage.show();
     }
+
+
+    public void showWindow() throws IOException {
+        start(stage);
+    }
+
 }
