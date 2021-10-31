@@ -1,8 +1,8 @@
-# javafx-gradle-starter
+# javafx-gradle
 
 A minimal JavaFX Gradle project. It uses the org.openjfx.javafxplugin to automatically install JavaFX.
 
-![](./doc/app-window.png)
+![](./doc/loginapp.png)
 
 Java version: 14
 
@@ -17,6 +17,8 @@ IntellIJ should automatically notice the started debug session, and give you the
 ![](./doc/intellij-debug-config.png)
 ![](./doc/intellij-debugging.png)
 
+Packaging:
+`./gradle shadowJar`
 
 学习网站：
 https://openjfx.io
