@@ -16,3 +16,8 @@ Debugging: `gradle run --debug-jvm`. The debugger will wait for a connection on 
 IntellIJ should automatically notice the started debug session, and give you the option to attach a debugger.
 ![](./doc/intellij-debug-config.png)
 ![](./doc/intellij-debugging.png)
+
+
+学习网站：
+https://openjfx.io
+
